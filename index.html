@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b12">
+<meta name="theme-color" content="#080a0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <title>XAUUSD Analyzer</title>
 
@@ -15,229 +17,293 @@
 }
 
 body{
-    background:#080b12;
-    color:#f1f5f9;
-    font-family:Arial,sans-serif;
-    padding:14px;
+    background:#080a0f;
+    color:#f5f5f7;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 
 .container{
-    max-width:1000px;
+    max-width:900px;
     margin:auto;
+    padding:16px;
 }
 
-header{
-    text-align:center;
-    padding:20px 10px;
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
 }
 
-header h1{
-    font-size:28px;
+.logo{
+    font-size:22px;
+    font-weight:800;
 }
 
-header p{
-    color:#8b95a7;
-    margin-top:7px;
+.logo span{
+    color:#ffd60a;
+}
+
+.status{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:12px;
+    color:#8d96a5;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ff453a;
 }
 
 .card{
-    background:#111722;
-    border:1px solid #222c3a;
-    border-radius:16px;
-    padding:17px;
-    margin-bottom:15px;
+    background:#11141b;
+    border:1px solid #242a35;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:14px;
 }
 
-.title{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:15px;
+.price-label{
+    color:#8d96a5;
+    font-size:13px;
 }
 
 .price{
-    font-size:36px;
-    font-weight:bold;
-}
-
-.change{
+    font-size:42px;
+    font-weight:800;
     margin-top:5px;
-    font-size:14px;
 }
 
-.green{
-    color:#39d98a;
+.price-info{
+    color:#8d96a5;
+    font-size:12px;
+    margin-top:5px;
 }
 
-.red{
-    color:#ff5c67;
+.signal-card{
+    text-align:center;
 }
 
-.yellow{
-    color:#ffc857;
+.signal-title{
+    color:#8d96a5;
+    font-size:12px;
+    margin-bottom:8px;
 }
-
-.gray{
-    color:#8993a4;
-}
-
-
-/* SIGNAL */
 
 .signal{
-    margin-top:18px;
-    padding:20px;
-    border-radius:14px;
-    text-align:center;
-    font-size:28px;
-    font-weight:bold;
+    font-size:38px;
+    font-weight:900;
 }
 
 .buy{
-    color:#39d98a;
-    border:1px solid #39d98a;
-    background:rgba(57,217,138,.10);
+    color:#31d158;
 }
 
 .sell{
-    color:#ff5c67;
-    border:1px solid #ff5c67;
-    background:rgba(255,92,103,.10);
+    color:#ff453a;
 }
 
-.no-trade{
-    color:#ffc857;
-    border:1px solid #ffc857;
-    background:rgba(255,200,87,.08);
+.wait{
+    color:#ffd60a;
 }
 
+.description{
+    color:#8d96a5;
+    font-size:12px;
+    margin-top:7px;
+}
 
-/* TECHNICAL */
-
-.grid{
+.tf-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:10px;
 }
 
-.box{
-    background:#0b1018;
-    border:1px solid #202938;
-    border-radius:11px;
-    padding:13px;
+@media(max-width:600px){
+    .tf-grid{
+        grid-template-columns:1fr;
+    }
 }
 
-.box small{
-    display:block;
-    color:#7d8798;
-    margin-bottom:6px;
-}
-
-.box strong{
-    font-size:16px;
-}
-
-.levels{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    margin-top:12px;
-}
-
-.level{
-    background:#0b1018;
-    border:1px solid #202938;
-    border-radius:11px;
-    padding:13px;
-}
-
-.level span{
-    display:block;
-    color:#7d8798;
-    font-size:11px;
-    margin-bottom:5px;
-}
-
-
-/* NEWS */
-
-.section-title{
-    font-size:18px;
-    font-weight:bold;
-    margin:22px 0 10px;
-}
-
-.news-list{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-.news-card{
-    background:#0b1018;
-    border:1px solid #222c3a;
-    border-radius:14px;
+.tf{
+    background:#11141b;
+    border:1px solid #242a35;
+    border-radius:15px;
     padding:15px;
 }
 
+.tf-title{
+    color:#8d96a5;
+    font-size:11px;
+}
+
+.tf-value{
+    font-size:17px;
+    font-weight:800;
+    margin-top:8px;
+}
+
+.up{
+    color:#31d158;
+}
+
+.down{
+    color:#ff453a;
+}
+
+.neutral{
+    color:#ffd60a;
+}
+
+.section-title{
+    font-size:19px;
+    font-weight:800;
+    margin:20px 0 10px;
+}
+
+.trade-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+@media(max-width:650px){
+    .trade-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+.trade{
+    background:#11141b;
+    border:1px solid #242a35;
+    border-radius:14px;
+    padding:14px;
+}
+
+.trade-label{
+    color:#8d96a5;
+    font-size:10px;
+}
+
+.trade-value{
+    font-size:17px;
+    font-weight:800;
+    margin-top:6px;
+}
+
+/* NEWS */
+
 .news-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:24px;
+    margin-bottom:10px;
+}
+
+.news-header h2{
+    font-size:20px;
+}
+
+.update{
+    color:#8d96a5;
+    font-size:10px;
+}
+
+.next{
+    background:linear-gradient(
+        145deg,
+        rgba(255,214,10,.12),
+        rgba(255,159,10,.04)
+    );
+    border:1px solid rgba(255,214,10,.3);
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:12px;
+}
+
+.next-label{
+    color:#ffd60a;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.next-name{
+    font-size:20px;
+    font-weight:800;
+}
+
+.next-date{
+    color:#ddd;
+    font-size:13px;
+    margin-top:7px;
+}
+
+.countdown{
+    color:#ffd60a;
+    font-weight:800;
+    margin-top:5px;
+}
+
+.badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:12px;
+}
+
+.badge{
+    background:#1b2029;
+    padding:6px 9px;
+    border-radius:8px;
+    font-size:10px;
+    color:#cbd1da;
+}
+
+.high{
+    color:#ff6961;
+}
+
+.medium{
+    color:#ffd60a;
+}
+
+.news{
+    background:#11141b;
+    border:1px solid #242a35;
+    border-radius:17px;
+    padding:16px;
+    margin-bottom:10px;
+}
+
+.news-top{
     display:flex;
     justify-content:space-between;
     gap:10px;
 }
 
 .news-name{
-    font-size:17px;
-    font-weight:bold;
-    line-height:1.3;
+    font-size:16px;
+    font-weight:800;
 }
 
 .news-date{
-    color:#b7c0cd;
-    font-size:13px;
-    margin-top:6px;
-}
-
-.badges{
-    display:flex;
-    flex-wrap:wrap;
-    gap:5px;
-    justify-content:flex-end;
-}
-
-.badge{
-    padding:5px 8px;
-    border-radius:7px;
+    text-align:right;
+    color:#8d96a5;
     font-size:10px;
-    font-weight:bold;
+    white-space:nowrap;
 }
 
-.high{
-    background:rgba(255,92,103,.15);
-    color:#ff6873;
+.currency{
+    color:#8d96a5;
+    font-size:11px;
+    margin-top:4px;
 }
-
-.medium{
-    background:rgba(255,200,87,.15);
-    color:#ffc857;
-}
-
-.low{
-    background:rgba(100,150,255,.15);
-    color:#80aaff;
-}
-
-.future{
-    background:rgba(255,200,87,.13);
-    color:#ffc857;
-}
-
-.released{
-    background:rgba(57,217,138,.13);
-    color:#39d98a;
-}
-
-
-/* VALUES */
 
 .values{
     display:grid;
@@ -246,99 +312,65 @@ header p{
     margin-top:13px;
 }
 
-.value{
-    background:#111722;
-    border-radius:8px;
-    padding:9px;
+.value-box{
+    background:#181c24;
+    border-radius:10px;
+    padding:10px;
 }
 
-.value small{
+.value-label{
+    color:#8d96a5;
+    font-size:9px;
+}
+
+.value{
+    font-weight:800;
+    font-size:13px;
+    margin-top:4px;
+}
+
+.scenario{
+    margin-top:12px;
+    padding:11px;
+    background:#181c24;
+    border-radius:10px;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.scenario strong{
     display:block;
-    color:#788394;
-    font-size:10px;
     margin-bottom:4px;
 }
 
-.value strong{
-    font-size:14px;
+.scenario.up-scenario{
+    border-left:3px solid #ff9f0a;
 }
 
-
-/* EXPLANATION */
-
-.explanation{
-    margin-top:13px;
-    padding:13px;
-    border-radius:10px;
-    background:#111722;
-    line-height:1.5;
-    font-size:14px;
-}
-
-.explanation-title{
-    font-weight:bold;
-    font-size:15px;
-    margin-bottom:7px;
-}
-
-.bullish{
-    border-left:4px solid #39d98a;
-}
-
-.bearish{
-    border-left:4px solid #ff5c67;
-}
-
-.volatility{
-    border-left:4px solid #ffc857;
-}
-
-.informational{
-    border-left:4px solid #7191ff;
-}
-
-.direction{
-    margin-top:9px;
-    font-weight:bold;
+.scenario.down-scenario{
+    border-left:3px solid #0a84ff;
 }
 
 .loading{
-    color:#8993a4;
     text-align:center;
-    padding:20px;
+    color:#8d96a5;
+    padding:25px;
 }
 
 .error{
-    color:#ff6974;
-    background:rgba(255,92,103,.08);
-    padding:12px;
-    border-radius:10px;
+    background:rgba(255,69,58,.1);
+    border:1px solid rgba(255,69,58,.3);
+    color:#ff817a;
+    padding:14px;
+    border-radius:12px;
+    font-size:12px;
 }
 
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    .grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .levels{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .news-header{
-        flex-direction:column;
-    }
-
-    .badges{
-        justify-content:flex-start;
-    }
-
-    .price{
-        font-size:30px;
-    }
+.footer{
+    text-align:center;
+    color:#555d69;
+    font-size:10px;
+    padding:25px 0 10px;
 }
 </style>
 </head>
@@ -347,151 +379,227 @@ header p{
 
 <div class="container">
 
-<header>
-    <h1>🥇 XAUUSD ANALYZER</h1>
-    <p>Gold • Technical Analysis • Economic News</p>
-</header>
-
-
-<!-- PRICE -->
-
-<div class="card">
-
-    <div class="title">
-        XAUUSD LIVE
-    </div>
-
-    <div id="price" class="price">
-        Зареждаме...
-    </div>
-
-    <div id="change" class="change gray">
-        —
-    </div>
-
-    <div id="signal" class="signal no-trade">
-        АНАЛИЗИРАМЕ...
-    </div>
-
-</div>
-
-
-<!-- TECHNICAL -->
-
-<div class="card">
-
-    <div class="title">
-        📊 Технически анализ
-    </div>
-
-    <div class="grid">
-
-        <div class="box">
-            <small>4H ПОСОКА</small>
-            <strong id="tf4h">—</strong>
+    <div class="header">
+        <div class="logo">
+            XAU<span>USD</span> Analyzer
         </div>
 
-        <div class="box">
-            <small>1H ПОСОКА</small>
-            <strong id="tf1h">—</strong>
+        <div class="status">
+            <span class="dot" id="statusDot"></span>
+            <span id="statusText">Свързване...</span>
+        </div>
+    </div>
+
+
+    <!-- PRICE -->
+
+    <div class="card">
+
+        <div class="price-label">
+            XAUUSD
         </div>
 
-        <div class="box">
-            <small>15M ПОСОКА</small>
-            <strong id="tf15">—</strong>
+        <div class="price" id="price">
+            —
         </div>
 
-        <div class="box">
-            <small>STRUCTURE</small>
-            <strong id="structure">—</strong>
-        </div>
-
-        <div class="box">
-            <small>BOS</small>
-            <strong id="bos">—</strong>
-        </div>
-
-        <div class="box">
-            <small>FVG</small>
-            <strong id="fvg">—</strong>
+        <div class="price-info" id="priceInfo">
+            Зареждане...
         </div>
 
     </div>
 
 
-    <div class="levels">
+    <!-- MAIN SIGNAL -->
 
-        <div class="level">
-            <span>ENTRY</span>
-            <strong id="entry">—</strong>
+    <div class="card signal-card">
+
+        <div class="signal-title">
+            ОСНОВЕН СИГНАЛ
         </div>
 
-        <div class="level">
-            <span>SL</span>
-            <strong id="sl">—</strong>
+        <div id="mainSignal" class="signal wait">
+            ИЗЧИСЛЯВАНЕ
         </div>
 
-        <div class="level">
-            <span>TP</span>
-            <strong id="tp">—</strong>
-        </div>
-
-        <div class="level">
-            <span>R:R</span>
-            <strong id="rr">—</strong>
+        <div id="signalDescription" class="description">
+            Анализиране...
         </div>
 
     </div>
 
-</div>
 
+    <!-- TIMEFRAMES -->
 
-<!-- NEWS -->
+    <div class="tf-grid">
 
-<div class="card">
+        <div class="tf">
+            <div class="tf-title">
+                4H — ПОСОКА
+            </div>
 
-    <div class="title">
-        📰 Икономически новини за XAUUSD
+            <div
+                id="tf4h"
+                class="tf-value neutral">
+                —
+            </div>
+        </div>
+
+        <div class="tf">
+            <div class="tf-title">
+                1H — ПОТВЪРЖДЕНИЕ
+            </div>
+
+            <div
+                id="tf1h"
+                class="tf-value neutral">
+                —
+            </div>
+        </div>
+
+        <div class="tf">
+            <div class="tf-title">
+                15M — ВХОД
+            </div>
+
+            <div
+                id="tf15m"
+                class="tf-value neutral">
+                —
+            </div>
+        </div>
+
     </div>
 
+
+    <!-- TRADE PLAN -->
 
     <div class="section-title">
-        🔴 Предстоящи новини
+        План
     </div>
 
-    <div id="upcomingNews" class="news-list">
-        <div class="loading">
-            Зареждаме...
+    <div class="trade-grid">
+
+        <div class="trade">
+            <div class="trade-label">
+                ENTRY
+            </div>
+
+            <div
+                class="trade-value"
+                id="entry">
+                —
+            </div>
         </div>
-    </div>
 
+        <div class="trade">
+            <div class="trade-label">
+                STOP LOSS
+            </div>
 
-    <div class="section-title">
-        📜 Последни публикувани новини
-    </div>
-
-    <div id="pastNews" class="news-list">
-        <div class="loading">
-            Зареждаме...
+            <div
+                class="trade-value"
+                id="sl">
+                —
+            </div>
         </div>
+
+        <div class="trade">
+            <div class="trade-label">
+                TAKE PROFIT
+            </div>
+
+            <div
+                class="trade-value"
+                id="tp">
+                —
+            </div>
+        </div>
+
+        <div class="trade">
+            <div class="trade-label">
+                R:R
+            </div>
+
+            <div
+                class="trade-value"
+                id="rr">
+                1:2
+            </div>
+        </div>
+
     </div>
 
-</div>
+
+    <!-- NEWS -->
+
+    <div class="news-header">
+
+        <h2>
+            Предстоящи новини
+        </h2>
+
+        <div
+            class="update"
+            id="newsUpdated">
+            —
+        </div>
+
+    </div>
+
+
+    <div id="nextEvent">
+
+        <div class="loading">
+            Зареждане на календара...
+        </div>
+
+    </div>
+
+
+    <div id="newsList">
+
+        <div class="loading">
+            Зареждане...
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        XAUUSD Analyzer
+    </div>
 
 </div>
 
 
 <script>
 
-const API = "https://biquote.io/api";
+/* =========================================================
+   API
+========================================================= */
+
+const API =
+    "https://biquote.io/api";
 
 
-// ======================================================
-// BASIC HELPERS
-// ======================================================
+let currentPrice = null;
+let mainSignal = "NO TRADE";
 
-function $(id){
-    return document.getElementById(id);
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function number(value){
+
+    const n = Number(value);
+
+    if(!Number.isFinite(n)){
+        return "—";
+    }
+
+    return n.toFixed(2);
 }
 
 
@@ -506,40 +614,13 @@ function escapeHTML(value){
 }
 
 
-function formatNumber(value){
+function dateTime(value){
 
-    if(
-        value === null ||
-        value === undefined ||
-        value === "" ||
-        !Number.isFinite(Number(value))
-    ){
-        return "—";
-    }
+    const date =
+        new Date(value);
 
-    return Number(value).toLocaleString(
-        "en-US",
-        {
-            maximumFractionDigits:4
-        }
-    );
-}
-
-
-// ======================================================
-// DATE
-// ======================================================
-
-function getDate(event){
-
-    if(!event.time){
-        return "Дата: неизвестна";
-    }
-
-    const date = new Date(event.time);
-
-    if(Number.isNaN(date.getTime())){
-        return "Дата: неизвестна";
+    if(isNaN(date.getTime())){
+        return "Няма зададен час";
     }
 
     return new Intl.DateTimeFormat(
@@ -548,51 +629,7 @@ function getDate(event){
             timeZone:"Europe/Sofia",
             day:"2-digit",
             month:"2-digit",
-            year:"numeric"
-        }
-    ).format(date);
-}
-
-
-function getTime(event){
-
-    if(!event.time){
-        return "Час: неизвестен";
-    }
-
-
-    if(
-        event.timeMode &&
-        event.timeMode !== "exact"
-    ){
-
-        if(event.timeMode === "tentative"){
-            return "Час: ориентировъчен";
-        }
-
-        if(event.timeMode === "date"){
-            return "Час: не е потвърден";
-        }
-
-        if(event.timeMode === "notime"){
-            return "Час: не е публикуван";
-        }
-
-        return "Час: ориентировъчен";
-    }
-
-
-    const date = new Date(event.time);
-
-    if(Number.isNaN(date.getTime())){
-        return "Час: неизвестен";
-    }
-
-
-    return new Intl.DateTimeFormat(
-        "bg-BG",
-        {
-            timeZone:"Europe/Sofia",
+            year:"numeric",
             hour:"2-digit",
             minute:"2-digit"
         }
@@ -600,166 +637,612 @@ function getTime(event){
 }
 
 
-// ======================================================
-// VALUE
-// ======================================================
+function countdown(value){
 
-function formatValue(value,event){
+    const target =
+        new Date(value).getTime();
 
-    if(
-        value === null ||
-        value === undefined ||
-        value === ""
-    ){
-        return "—";
+    const diff =
+        target - Date.now();
+
+    if(diff <= 0){
+        return "започва сега";
     }
 
+    const minutes =
+        Math.floor(diff / 60000);
 
-    const numberValue = Number(value);
+    const days =
+        Math.floor(minutes / 1440);
 
-    if(Number.isNaN(numberValue)){
-        return escapeHTML(value);
+    const hours =
+        Math.floor(
+            (minutes % 1440) / 60
+        );
+
+    const mins =
+        minutes % 60;
+
+
+    if(days > 0){
+        return `след ${days}д ${hours}ч`;
     }
 
+    if(hours > 0){
+        return `след ${hours}ч ${mins}м`;
+    }
 
-    let result =
-        numberValue.toLocaleString(
-            "en-US",
+    return `след ${mins}м`;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+async function loadPrice(){
+
+    try{
+
+        const response =
+            await fetch(
+                API +
+                "/XAUUSD?allowStale=true",
+                {
+                    cache:"no-store"
+                }
+            );
+
+
+        if(!response.ok){
+            throw new Error(
+                "Price error"
+            );
+        }
+
+
+        const data =
+            await response.json();
+
+
+        currentPrice =
+            Number(
+                data.mid ??
+                data.price ??
+                data.last ??
+                data.close ??
+                data.bid
+            );
+
+
+        if(!Number.isFinite(currentPrice)){
+            throw new Error(
+                "Invalid price"
+            );
+        }
+
+
+        document.getElementById(
+            "price"
+        ).textContent =
+            number(currentPrice);
+
+
+        document.getElementById(
+            "priceInfo"
+        ).textContent =
+            "Последна налична цена";
+
+
+        document.getElementById(
+            "statusText"
+        ).textContent =
+            "Онлайн";
+
+
+        document.getElementById(
+            "statusDot"
+        ).style.background =
+            "#31d158";
+
+
+        calculateTradePlan();
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        document.getElementById(
+            "statusText"
+        ).textContent =
+            "Няма връзка";
+
+        document.getElementById(
+            "statusDot"
+        ).style.background =
+            "#ff453a";
+    }
+
+}
+
+
+/* =========================================================
+   OHLC
+========================================================= */
+
+async function loadOHLC(interval){
+
+    const response =
+        await fetch(
+            API +
+            `/XAUUSD/ohlc?interval=${interval}&limit=150`,
             {
-                maximumFractionDigits:
-                    typeof event.digits === "number"
-                    ? event.digits
-                    : 2
+                cache:"no-store"
             }
         );
 
 
-    if(event.unit === "percent"){
-        result += "%";
+    if(!response.ok){
+        throw new Error(
+            "OHLC error"
+        );
     }
 
 
-    if(event.multiplier === "thousands"){
-        result += "K";
+    const data =
+        await response.json();
+
+
+    if(Array.isArray(data)){
+        return data;
     }
 
-
-    if(event.multiplier === "millions"){
-        result += "M";
+    if(Array.isArray(data.data)){
+        return data.data;
     }
 
+    if(Array.isArray(data.bars)){
+        return data.bars;
+    }
 
-    return result;
+    return [];
 }
 
 
-// ======================================================
-// EVENT TYPE
-// ======================================================
+/* =========================================================
+   CLOSE
+========================================================= */
 
-function eventText(event){
+function closeValue(candle){
 
-    return (
-        (event.name || "") +
-        " " +
-        (event.type || "") +
-        " " +
-        (event.sector || "")
-    ).toLowerCase();
+    return Number(
+        candle.close ??
+        candle.c ??
+        candle.Close
+    );
 }
 
 
-function getCategory(event){
+/* =========================================================
+   DIRECTION
+========================================================= */
 
-    const text = eventText(event);
+function direction(candles){
+
+    const closes =
+        candles
+            .map(closeValue)
+            .filter(
+                x => Number.isFinite(x)
+            );
 
 
-    // FOMC / FED / RATES
+    if(closes.length < 20){
+        return "NEUTRAL";
+    }
+
+
+    const recent =
+        closes.slice(-10);
+
+    const previous =
+        closes.slice(-20,-10);
+
+
+    const recentAverage =
+        recent.reduce(
+            (a,b) => a+b,
+            0
+        ) / recent.length;
+
+
+    const previousAverage =
+        previous.reduce(
+            (a,b) => a+b,
+            0
+        ) / previous.length;
+
+
+    const recentMove =
+        recent[recent.length-1]
+        -
+        recent[0];
+
 
     if(
-        text.includes("interest rate") ||
-        text.includes("rate decision") ||
-        text.includes("federal funds") ||
-        text.includes("fomc") ||
-        text.includes("fed ")
+        recentAverage >
+        previousAverage
+        &&
+        recentMove > 0
     ){
-        return "rates";
+        return "UP";
     }
 
 
-    // INFLATION
+    if(
+        recentAverage <
+        previousAverage
+        &&
+        recentMove < 0
+    ){
+        return "DOWN";
+    }
+
+
+    return "NEUTRAL";
+}
+
+
+/* =========================================================
+   DISPLAY TF
+========================================================= */
+
+function displayTF(id,value){
+
+    const el =
+        document.getElementById(id);
+
+
+    el.className =
+        "tf-value";
+
+
+    if(value === "UP"){
+
+        el.textContent =
+            "ВЪЗХОДЯЩА";
+
+        el.classList.add(
+            "up"
+        );
+
+    }
+    else if(value === "DOWN"){
+
+        el.textContent =
+            "НИСХОДЯЩА";
+
+        el.classList.add(
+            "down"
+        );
+
+    }
+    else{
+
+        el.textContent =
+            "НЕУТРАЛНА";
+
+        el.classList.add(
+            "neutral"
+        );
+    }
+
+}
+
+
+/* =========================================================
+   ANALYSIS
+========================================================= */
+
+async function analyze(){
+
+    try{
+
+        const result =
+            await Promise.all([
+                loadOHLC("4h"),
+                loadOHLC("1h"),
+                loadOHLC("15m")
+            ]);
+
+
+        const d4 =
+            direction(result[0]);
+
+        const d1 =
+            direction(result[1]);
+
+        const d15 =
+            direction(result[2]);
+
+
+        displayTF(
+            "tf4h",
+            d4
+        );
+
+        displayTF(
+            "tf1h",
+            d1
+        );
+
+        displayTF(
+            "tf15m",
+            d15
+        );
+
+
+        /*
+            САМО ЕДИН ОСНОВЕН СИГНАЛ.
+        */
+
+        if(
+            d4 === "UP" &&
+            d1 === "UP" &&
+            d15 === "UP"
+        ){
+
+            mainSignal =
+                "BUY";
+
+        }
+        else if(
+            d4 === "DOWN" &&
+            d1 === "DOWN" &&
+            d15 === "DOWN"
+        ){
+
+            mainSignal =
+                "SELL";
+
+        }
+        else{
+
+            mainSignal =
+                "NO TRADE";
+        }
+
+
+        const signal =
+            document.getElementById(
+                "mainSignal"
+            );
+
+
+        signal.className =
+            "signal";
+
+
+        if(mainSignal === "BUY"){
+
+            signal.textContent =
+                "BUY";
+
+            signal.classList.add(
+                "buy"
+            );
+
+            document.getElementById(
+                "signalDescription"
+            ).textContent =
+                "4H → 1H → 15M са в една посока.";
+
+        }
+        else if(mainSignal === "SELL"){
+
+            signal.textContent =
+                "SELL";
+
+            signal.classList.add(
+                "sell"
+            );
+
+            document.getElementById(
+                "signalDescription"
+            ).textContent =
+                "4H → 1H → 15M са в една посока.";
+
+        }
+        else{
+
+            signal.textContent =
+                "NO TRADE";
+
+            signal.classList.add(
+                "wait"
+            );
+
+            document.getElementById(
+                "signalDescription"
+            ).textContent =
+                "Няма пълно потвърждение между времевите рамки.";
+        }
+
+
+        calculateTradePlan();
+
+    }
+    catch(error){
+
+        console.error(
+            "Analysis error:",
+            error
+        );
+
+        mainSignal =
+            "NO TRADE";
+
+    }
+
+}
+
+
+/* =========================================================
+   TRADE PLAN
+========================================================= */
+
+function calculateTradePlan(){
 
     if(
-        text.includes("cpi") ||
-        text.includes("inflation") ||
-        text.includes("pce") ||
-        text.includes("ppi")
+        !Number.isFinite(currentPrice)
+        ||
+        mainSignal === "NO TRADE"
+    ){
+
+        document.getElementById(
+            "entry"
+        ).textContent = "—";
+
+        document.getElementById(
+            "sl"
+        ).textContent = "—";
+
+        document.getElementById(
+            "tp"
+        ).textContent = "—";
+
+        return;
+    }
+
+
+    const risk =
+        Math.max(
+            currentPrice * 0.003,
+            8
+        );
+
+
+    let sl;
+    let tp;
+
+
+    if(mainSignal === "BUY"){
+
+        sl =
+            currentPrice - risk;
+
+        tp =
+            currentPrice + risk * 2;
+
+    }
+    else{
+
+        sl =
+            currentPrice + risk;
+
+        tp =
+            currentPrice - risk * 2;
+    }
+
+
+    document.getElementById(
+        "entry"
+    ).textContent =
+        number(currentPrice);
+
+
+    document.getElementById(
+        "sl"
+    ).textContent =
+        number(sl);
+
+
+    document.getElementById(
+        "tp"
+    ).textContent =
+        number(tp);
+
+}
+
+
+/* =========================================================
+   NEWS CATEGORY
+========================================================= */
+
+function category(name){
+
+    const n =
+        String(name || "")
+        .toLowerCase();
+
+
+    if(
+        n.includes("cpi") ||
+        n.includes("consumer price") ||
+        n.includes("inflation") ||
+        n.includes("pce") ||
+        n.includes("ppi") ||
+        n.includes("producer price")
     ){
         return "inflation";
     }
 
 
-    // EMPLOYMENT
+    if(
+        n.includes("fomc") ||
+        n.includes("interest rate") ||
+        n.includes("fed rate") ||
+        n.includes("federal funds") ||
+        n.includes("rate decision")
+    ){
+        return "rates";
+    }
+
 
     if(
-        text.includes("nonfarm") ||
-        text.includes("payroll") ||
-        text.includes("employment change") ||
-        text.includes("adp employment") ||
-        text.includes("jolts")
+        n.includes("nonfarm") ||
+        n.includes("payroll") ||
+        n.includes("employment") ||
+        n.includes("adp") ||
+        n.includes("jolts")
     ){
         return "jobs";
     }
 
 
-    // UNEMPLOYMENT
-
     if(
-        text.includes("unemployment") ||
-        text.includes("jobless claims") ||
-        text.includes("initial claims") ||
-        text.includes("continuing claims")
+        n.includes("unemployment") ||
+        n.includes("jobless claims") ||
+        n.includes("initial claims")
     ){
         return "unemployment";
     }
 
 
-    // GDP
-
-    if(text.includes("gdp")){
+    if(
+        n.includes("gdp") ||
+        n.includes("gross domestic")
+    ){
         return "gdp";
     }
 
 
-    // RETAIL
-
     if(
-        text.includes("retail sales") ||
-        text.includes("consumer spending")
+        n.includes("retail sales") ||
+        n.includes("consumer spending")
     ){
-        return "retail";
+        return "spending";
     }
 
 
-    // PMI / ISM / CONFIDENCE
-
     if(
-        text.includes("pmi") ||
-        text.includes("ism") ||
-        text.includes("consumer confidence")
+        n.includes("pmi") ||
+        n.includes("ism") ||
+        n.includes("manufacturing") ||
+        n.includes("services")
     ){
-        return "confidence";
-    }
-
-
-    // HOUSING
-
-    if(
-        text.includes("housing") ||
-        text.includes("home sales") ||
-        text.includes("building permits")
-    ){
-        return "housing";
+        return "business";
     }
 
 
@@ -767,681 +1250,175 @@ function getCategory(event){
 }
 
 
-// ======================================================
-// NEWS EXPLANATION
-// ======================================================
+/* =========================================================
+   SCENARIOS
+========================================================= */
 
-function analyzeNews(event){
+function scenarios(name){
 
-    const category = getCategory(event);
-
-
-    const actual =
-        event.actual === null ||
-        event.actual === undefined
-        ? null
-        : Number(event.actual);
+    const type =
+        category(name);
 
 
-    const forecast =
-        event.forecast === null ||
-        event.forecast === undefined
-        ? null
-        : Number(event.forecast);
-
-
-    const previous =
-        event.previous === null ||
-        event.previous === undefined
-        ? null
-        : Number(event.previous);
-
-
-    const upcoming =
-        actual === null;
-
-
-    // ==================================================
-    // UPCOMING
-    // ==================================================
-
-    if(upcoming){
-
-        if(category === "rates"){
-
-            return {
-                type:"volatility",
-                title:"ПРЕДСТОИ — ЛИХВЕНО РЕШЕНИЕ",
-                text:
-                "Това е новина с потенциал за силно движение на златото. " +
-                "Ако Фед е по-ястребов от очакваното → USD и доходността могат да се покачат → " +
-                "XAUUSD може да падне. Ако е по-гълъбов → възможна подкрепа за златото."
-            };
-        }
-
-
-        if(category === "inflation"){
-
-            return {
-                type:"volatility",
-                title:"ПРЕДСТОИ — ИНФЛАЦИЯ",
-                text:
-                "По-висока инфлация от очакваното може да увеличи очакванията за по-строга политика → " +
-                "USD може да се засили → възможен натиск върху XAUUSD. " +
-                "По-ниска инфлация може да подкрепи златото."
-            };
-        }
-
-
-        if(category === "jobs"){
-
-            return {
-                type:"volatility",
-                title:"ПРЕДСТОИ — ТРУДОВ ПАЗАР",
-                text:
-                "По-силен резултат от очакваното може да подкрепи USD и доходността → " +
-                "потенциално bearish за златото. По-слаб резултат може да подкрепи XAUUSD."
-            };
-        }
-
-
-        if(category === "unemployment"){
-
-            return {
-                type:"volatility",
-                title:"ПРЕДСТОИ — БЕЗРАБОТИЦА",
-                text:
-                "По-висока безработица или повече молби за помощи могат да отслабят USD → " +
-                "потенциална подкрепа за златото. По-силни данни за труда могат да окажат натиск върху XAUUSD."
-            };
-        }
-
-
-        if(category === "gdp"){
-
-            return {
-                type:"volatility",
-                title:"ПРЕДСТОИ — GDP",
-                text:
-                "По-силен икономически растеж може да подкрепи USD и доходността → " +
-                "потенциален натиск върху златото. По-слаб GDP може да подкрепи XAUUSD."
-            };
-        }
-
-
-        if(category === "retail"){
-
-            return {
-                type:"volatility",
-                title:"ПРЕДСТОИ — ПОТРЕБЛЕНИЕ",
-                text:
-                "По-силни продажби могат да подкрепят USD → възможен натиск върху златото. " +
-                "По-слаби продажби могат да окажат подкрепа на XAUUSD."
-            };
-        }
-
-
-        if(category === "confidence"){
-
-            return {
-                type:"volatility",
-                title:"ПРЕДСТОИ — ИКОНОМИЧЕСКИ SENTIMENT",
-                text:
-                "По-силен икономически sentiment може да подкрепи USD. " +
-                "По-слаб sentiment може да увеличи търсенето на safe-haven активи като златото."
-            };
-        }
-
+    if(type === "inflation"){
 
         return {
-            type:"informational",
-            title:"ПРЕДСТОИ — СЛЕДИ РЕАКЦИЯТА",
-            text:
-            "Предстои икономическо събитие. " +
-            "Посоката на XAUUSD ще зависи от Actual спрямо пазарните очаквания."
+            first:
+                "Ако Actual е ПО-ВИСОК от Forecast → по-висока инфлация → възможни по-високи лихвени очаквания → потенциален натиск върху златото.",
+
+            second:
+                "Ако Actual е ПО-НИСЪК от Forecast → по-ниска инфлация → възможни по-ниски лихвени очаквания → потенциална подкрепа за златото."
         };
     }
 
 
-    // ==================================================
-    // RELEASED — RATES
-    // ==================================================
-
-    if(category === "rates"){
-
-        if(
-            forecast !== null &&
-            actual > forecast
-        ){
-
-            return {
-                type:"bearish",
-                title:"BEARISH ЗА ЗЛАТОТО",
-                text:
-                "Лихвата е над очакваното. Това показва по-строга политика от прогнозата → " +
-                "може да подкрепи USD и доходността → възможен натиск върху XAUUSD."
-            };
-        }
-
-
-        if(
-            forecast !== null &&
-            actual < forecast
-        ){
-
-            return {
-                type:"bullish",
-                title:"BULLISH ЗА ЗЛАТОТО",
-                text:
-                "Лихвата е под очакваното. Това показва по-мека политика → " +
-                "може да отслаби USD/доходността → възможна подкрепа за XAUUSD."
-            };
-        }
-
+    if(type === "rates"){
 
         return {
-            type:"volatility",
-            title:"ВИСОКА ВОЛАТИЛНОСТ",
-            text:
-            "Лихвеното решение е публикувано. " +
-            "Тук не гледаме само числото — важни са изявлението на Фед и бъдещите очаквания за лихвите."
+            first:
+                "Ако Фед е ПО-СТРОГ от очакваното → по-високи лихвени очаквания → потенциален натиск върху златото.",
+
+            second:
+                "Ако Фед е ПО-МЕК от очакваното → по-ниски лихвени очаквания → потенциална подкрепа за златото."
         };
     }
 
 
-    // ==================================================
-    // RELEASED — INFLATION
-    // ==================================================
-
-    if(category === "inflation"){
-
-        if(forecast === null){
-
-            return {
-                type:"informational",
-                title:"ИНФЛАЦИЯ — НЯМА FORECAST",
-                text:
-                "Actual е публикуван, но няма Forecast в календара. " +
-                "Затова не измисляме посока. Пазарът ще сравни резултата със собствените си очаквания."
-            };
-        }
-
-
-        if(actual > forecast){
-
-            return {
-                type:"bearish",
-                title:"BEARISH ЗА ЗЛАТОТО",
-                text:
-                "Инфлацията е по-висока от очакваното. " +
-                "Това може да увеличи очакванията за по-строга политика → USD може да се засили → " +
-                "златото може да бъде под натиск през следващите часове."
-            };
-        }
-
-
-        if(actual < forecast){
-
-            return {
-                type:"bullish",
-                title:"BULLISH ЗА ЗЛАТОТО",
-                text:
-                "Инфлацията е по-ниска от очакваното. " +
-                "Това може да намали очакванията за по-строга политика → USD/доходността могат да отслабнат → " +
-                "златото може да получи подкрепа през следващите часове."
-            };
-        }
-
+    if(type === "jobs"){
 
         return {
-            type:"volatility",
-            title:"В ЛИНИЯ С ОЧАКВАНИЯТА",
-            text:
-            "Инфлацията е приблизително според прогнозата. " +
-            "Няма голяма изненада спрямо Forecast. Следи реакцията на USD и доходността."
+            first:
+                "Ако данните са ПО-СИЛНИ от Forecast → по-силен трудов пазар → възможна подкрепа за USD → потенциален натиск върху златото.",
+
+            second:
+                "Ако данните са ПО-СЛАБИ от Forecast → по-слаб трудов пазар → възможни по-ниски лихвени очаквания → потенциална подкрепа за златото."
         };
     }
 
 
-    // ==================================================
-    // JOBS
-    // ==================================================
-
-    if(category === "jobs"){
-
-        if(forecast === null){
-
-            return {
-                type:"informational",
-                title:"ТРУДОВ ПАЗАР — НЯМА FORECAST",
-                text:
-                "Има Actual, но няма Forecast. " +
-                "Не е коректно автоматично да определяме bullish или bearish само по числото."
-            };
-        }
-
-
-        if(actual > forecast){
-
-            return {
-                type:"bearish",
-                title:"BEARISH ЗА ЗЛАТОТО",
-                text:
-                "Данните за заетостта са по-силни от очакваното. " +
-                "Това може да подкрепи USD и доходността → възможен натиск върху XAUUSD."
-            };
-        }
-
-
-        if(actual < forecast){
-
-            return {
-                type:"bullish",
-                title:"BULLISH ЗА ЗЛАТОТО",
-                text:
-                "Данните за заетостта са по-слаби от очакваното. " +
-                "Това може да отслаби USD и доходността → възможна подкрепа за златото."
-            };
-        }
-
+    if(type === "unemployment"){
 
         return {
-            type:"volatility",
-            title:"В ЛИНИЯ С ОЧАКВАНИЯТА",
-            text:
-            "Данните са приблизително според Forecast. " +
-            "Няма голяма изненада спрямо очакванията."
+            first:
+                "Ако безработицата/claims са ПО-ВИСОКИ → по-слаб трудов пазар → възможна подкрепа за златото.",
+
+            second:
+                "Ако са ПО-НИСКИ → по-силен трудов пазар → възможен натиск върху златото."
         };
     }
 
 
-    // ==================================================
-    // UNEMPLOYMENT
-    // ==================================================
-
-    if(category === "unemployment"){
-
-        if(forecast === null){
-
-            return {
-                type:"informational",
-                title:"БЕЗРАБОТИЦА — НЯМА FORECAST",
-                text:
-                "Няма достатъчно данни за директно сравнение с очакванията."
-            };
-        }
-
-
-        if(actual > forecast){
-
-            return {
-                type:"bullish",
-                title:"BULLISH ЗА ЗЛАТОТО",
-                text:
-                "Безработицата/молбите за помощи са по-високи от очакваното. " +
-                "Това може да показва по-слаб трудов пазар → натиск върху USD → " +
-                "възможна подкрепа за XAUUSD."
-            };
-        }
-
-
-        if(actual < forecast){
-
-            return {
-                type:"bearish",
-                title:"BEARISH ЗА ЗЛАТОТО",
-                text:
-                "Безработицата/молбите са по-ниски от очакваното. " +
-                "Това може да показва по-силен трудов пазар → подкрепа за USD → " +
-                "възможен натиск върху златото."
-            };
-        }
-
+    if(type === "gdp"){
 
         return {
-            type:"volatility",
-            title:"В ЛИНИЯ С ОЧАКВАНИЯТА",
-            text:
-            "Резултатът е приблизително според прогнозата."
+            first:
+                "Ако GDP е ПО-СИЛЕН от Forecast → по-силна икономика → възможен натиск върху златото.",
+
+            second:
+                "Ако GDP е ПО-СЛАБ от Forecast → възможни по-ниски лихвени очаквания → потенциална подкрепа за златото."
         };
     }
 
 
-    // ==================================================
-    // GDP
-    // ==================================================
-
-    if(category === "gdp"){
-
-        if(forecast !== null){
-
-            if(actual > forecast){
-
-                return {
-                    type:"bearish",
-                    title:"BEARISH ЗА ЗЛАТОТО",
-                    text:
-                    "GDP е по-силен от очакваното → икономиката изглежда по-силна → " +
-                    "USD/доходността могат да получат подкрепа → натиск върху XAUUSD."
-                };
-            }
-
-
-            if(actual < forecast){
-
-                return {
-                    type:"bullish",
-                    title:"BULLISH ЗА ЗЛАТОТО",
-                    text:
-                    "GDP е по-слаб от очакваното → икономиката изглежда по-слаба → " +
-                    "USD/доходността могат да отслабнат → подкрепа за XAUUSD."
-                };
-            }
-        }
-
+    if(type === "spending"){
 
         return {
-            type:"informational",
-            title:"GDP — СЛЕДИ РЕАКЦИЯТА",
-            text:
-            "GDP е публикуван. За посоката на златото е важно колко голяма е изненадата спрямо очакванията."
+            first:
+                "Ако потреблението е ПО-СИЛНО → по-устойчива икономика → възможен натиск върху златото.",
+
+            second:
+                "Ако потреблението е ПО-СЛАБО → възможно забавяне → потенциална подкрепа за златото."
         };
     }
 
 
-    // ==================================================
-    // RETAIL
-    // ==================================================
-
-    if(category === "retail"){
-
-        if(
-            forecast !== null &&
-            actual > forecast
-        ){
-
-            return {
-                type:"bearish",
-                title:"BEARISH ЗА ЗЛАТОТО",
-                text:
-                "Потребителските продажби са по-силни от очакваното → " +
-                "USD може да получи подкрепа → възможен натиск върху XAUUSD."
-            };
-        }
-
-
-        if(
-            forecast !== null &&
-            actual < forecast
-        ){
-
-            return {
-                type:"bullish",
-                title:"BULLISH ЗА ЗЛАТОТО",
-                text:
-                "Потребителските продажби са по-слаби от очакваното → " +
-                "USD може да отслабне → възможна подкрепа за златото."
-            };
-        }
-
+    if(type === "business"){
 
         return {
-            type:"informational",
-            title:"ПОТРЕБЛЕНИЕ — СЛЕДИ РЕАКЦИЯТА",
-            text:
-            "Новината е публикувана. Реакцията зависи от разликата между Actual и очакванията."
+            first:
+                "Ако показателят е ПО-СИЛЕН → по-силна икономическа активност → възможен натиск върху златото.",
+
+            second:
+                "Ако показателят е ПО-СЛАБ → възможно забавяне → потенциална подкрепа за златото."
         };
     }
 
-
-    // ==================================================
-    // CONFIDENCE / PMI
-    // ==================================================
-
-    if(category === "confidence"){
-
-        if(
-            forecast !== null &&
-            actual > forecast
-        ){
-
-            return {
-                type:"bearish",
-                title:"BEARISH ЗА ЗЛАТОТО",
-                text:
-                "Икономическият sentiment е по-силен от очакваното → " +
-                "може да подкрепи USD → възможен натиск върху златото."
-            };
-        }
-
-
-        if(
-            forecast !== null &&
-            actual < forecast
-        ){
-
-            return {
-                type:"bullish",
-                title:"BULLISH ЗА ЗЛАТОТО",
-                text:
-                "Икономическият sentiment е по-слаб от очакваното → " +
-                "може да отслаби USD → възможна подкрепа за XAUUSD."
-            };
-        }
-
-
-        return {
-            type:"informational",
-            title:"SENTIMENT — СЛЕДИ РЕАКЦИЯТА",
-            text:
-            "Няма достатъчно изненада спрямо очакванията за автоматична посока."
-        };
-    }
-
-
-    // ==================================================
-    // OTHER
-    // ==================================================
 
     return {
-        type:"informational",
-        title:"ИНФОРМАЦИЯ",
-        text:
-        "Новината е публикувана. Няма достатъчно информация за автоматично определяне на посоката за XAUUSD. " +
-        "Следи USD и доходността на американските облигации за реакцията на златото."
+        first:
+            "Следи Actual спрямо Forecast. По-голямо отклонение от очакваното може да предизвика силно движение.",
+
+        second:
+            "За XAUUSD следи едновременно USD, доходността по облигациите и реакцията на самото злато."
     };
+
 }
 
 
-// ======================================================
-// IMPORTANCE
-// ======================================================
+/* =========================================================
+   NEWS IMPORTANCE
+========================================================= */
 
-function importanceClass(value){
+function importance(value){
 
-    const x =
-        String(value || "low").toLowerCase();
+    const v =
+        String(value || "")
+        .toLowerCase();
 
-    if(x === "high"){
-        return "high";
+
+    if(
+        v.includes("high") ||
+        v === "3" ||
+        v === "2"
+    ){
+        return "ВИСОКА";
     }
 
-    if(x === "medium"){
-        return "medium";
+
+    if(
+        v.includes("medium") ||
+        v.includes("moderate") ||
+        v === "1"
+    ){
+        return "СРЕДНА";
     }
 
-    return "low";
+
+    return "НИСКА";
 }
 
 
-// ======================================================
-// NEWS CARD
-// ======================================================
-
-function createNewsCard(event){
-
-    const result =
-        analyzeNews(event);
-
-
-    const upcoming =
-        event.actual === null ||
-        event.actual === undefined;
-
-
-    const statusText =
-        upcoming
-        ? "ПРЕДСТОИ"
-        : "ПУБЛИКУВАНО";
-
-
-    const statusClass =
-        upcoming
-        ? "future"
-        : "released";
-
-
-    return `
-
-        <div class="news-card">
-
-            <div class="news-header">
-
-                <div>
-
-                    <div class="news-name">
-                        ${escapeHTML(
-                            event.name ||
-                            "Economic Event"
-                        )}
-                    </div>
-
-                    <div class="news-date">
-
-                        📅 ${getDate(event)}
-
-                        &nbsp; • &nbsp;
-
-                        🕒 ${getTime(event)}
-
-                        &nbsp; • &nbsp;
-
-                        💵 ${escapeHTML(
-                            event.currency ||
-                            "USD"
-                        )}
-
-                    </div>
-
-                </div>
-
-
-                <div class="badges">
-
-                    <span class="badge ${statusClass}">
-                        ${statusText}
-                    </span>
-
-                    <span class="badge ${importanceClass(
-                        event.importance
-                    )}">
-                        ${String(
-                            event.importance ||
-                            "low"
-                        ).toUpperCase()}
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="values">
-
-                <div class="value">
-                    <small>ACTUAL</small>
-                    <strong>
-                        ${formatValue(
-                            event.actual,
-                            event
-                        )}
-                    </strong>
-                </div>
-
-                <div class="value">
-                    <small>FORECAST</small>
-                    <strong>
-                        ${formatValue(
-                            event.forecast,
-                            event
-                        )}
-                    </strong>
-                </div>
-
-                <div class="value">
-                    <small>PREVIOUS</small>
-                    <strong>
-                        ${formatValue(
-                            event.previous,
-                            event
-                        )}
-                    </strong>
-                </div>
-
-            </div>
-
-
-            <div class="explanation ${result.type}">
-
-                <div class="explanation-title">
-                    ${result.title}
-                </div>
-
-                ${result.text}
-
-            </div>
-
-        </div>
-
-    `;
-}
-
-
-// ======================================================
-// LOAD NEWS
-// ======================================================
+/* =========================================================
+   LOAD NEWS
+========================================================= */
 
 async function loadNews(){
 
-    const upcomingBox =
-        $("upcomingNews");
+    const next =
+        document.getElementById(
+            "nextEvent"
+        );
 
-    const pastBox =
-        $("pastNews");
+    const list =
+        document.getElementById(
+            "newsList"
+        );
 
 
     try{
+
+        /*
+            САМО ОТ СЕГА ДО 30 ДНИ НАПРЕД.
+        */
 
         const now =
             new Date();
 
 
-        // 30 дни назад
-        const from =
+        const future =
             new Date(
-                now.getTime() -
-                30 *
-                24 *
-                60 *
-                60 *
-                1000
-            );
-
-
-        // 30 дни напред
-        const to =
-            new Date(
-                now.getTime() +
+                now.getTime()
+                +
                 30 *
                 24 *
                 60 *
@@ -1455,26 +1432,29 @@ async function loadNews(){
             "/calendar" +
             "?from=" +
             encodeURIComponent(
-                from.toISOString()
+                now.toISOString()
             ) +
             "&to=" +
             encodeURIComponent(
-                to.toISOString()
+                future.toISOString()
             ) +
             "&countries=US" +
             "&importance=low" +
-            "&limit=500";
+            "&limit=300";
 
 
         const response =
-            await fetch(url);
+            await fetch(
+                url,
+                {
+                    cache:"no-store"
+                }
+            );
 
 
         if(!response.ok){
-
             throw new Error(
-                "Calendar HTTP " +
-                response.status
+                "Calendar error"
             );
         }
 
@@ -1483,590 +1463,518 @@ async function loadNews(){
             await response.json();
 
 
-        if(!Array.isArray(data)){
+        let events = [];
 
-            throw new Error(
-                "Невалиден календарен отговор."
-            );
+
+        if(Array.isArray(data)){
+            events = data;
+        }
+        else if(
+            Array.isArray(data.data)
+        ){
+            events = data.data;
+        }
+        else if(
+            Array.isArray(data.events)
+        ){
+            events = data.events;
         }
 
 
-        // Само USD / US събития
-        const events =
-            data.filter(event => {
+        /*
+            МАХАМЕ ВСИЧКО МИНАЛО.
+        */
 
-                const currency =
-                    String(
-                        event.currency || ""
-                    ).toUpperCase();
+        events =
+            events.filter(event => {
 
-                const country =
-                    String(
-                        event.countryCode || ""
-                    ).toUpperCase();
+                const time =
+                    new Date(
+                        event.time
+                    ).getTime();
 
-                return (
-                    currency === "USD" ||
-                    country === "US" ||
-                    country === "USA"
-                );
+
+                if(
+                    !Number.isFinite(time)
+                ){
+                    return false;
+                }
+
+
+                if(
+                    time <= Date.now()
+                ){
+                    return false;
+                }
+
+
+                /*
+                    Ако Actual вече има стойност,
+                    новината вече е излязла.
+                */
+
+                if(
+                    event.actual !== null &&
+                    event.actual !== undefined &&
+                    event.actual !== ""
+                ){
+                    return false;
+                }
+
+
+                return true;
 
             });
 
 
-        // Upcoming
-        const upcoming =
-            events
-                .filter(event =>
-                    event.actual === null ||
-                    event.actual === undefined
-                )
-                .sort(
-                    (a,b) =>
-                        new Date(a.time) -
-                        new Date(b.time)
-                )
-                .slice(0,20);
+        /*
+            НАЙ-БЛИЗКАТА ПЪРВА.
+        */
+
+        events.sort(
+            (a,b) =>
+                new Date(a.time)
+                -
+                new Date(b.time)
+        );
 
 
-        // Past
-        const past =
-            events
-                .filter(event =>
-                    event.actual !== null &&
-                    event.actual !== undefined
-                )
-                .sort(
-                    (a,b) =>
-                        new Date(b.time) -
-                        new Date(a.time)
-                )
-                .slice(0,20);
+        /*
+            ПРЕМАХВАМЕ ДУБЛИКАТИ.
+        */
+
+        const seen =
+            new Set();
 
 
-        if(upcoming.length){
+        events =
+            events.filter(event => {
 
-            upcomingBox.innerHTML =
-                upcoming
-                    .map(createNewsCard)
-                    .join("");
+                const key =
+                    `${event.time}|${event.name}|${event.currency}`;
 
-        }else{
 
-            upcomingBox.innerHTML = `
-                <div class="loading">
-                    Няма намерени предстоящи US новини.
+                if(seen.has(key)){
+                    return false;
+                }
+
+
+                seen.add(key);
+
+                return true;
+
+            });
+
+
+        events =
+            events.slice(0,40);
+
+
+        document.getElementById(
+            "newsUpdated"
+        ).textContent =
+            "обновено " +
+            new Intl.DateTimeFormat(
+                "bg-BG",
+                {
+                    hour:"2-digit",
+                    minute:"2-digit"
+                }
+            ).format(new Date());
+
+
+        if(events.length === 0){
+
+            next.innerHTML = `
+                <div class="error">
+                    Няма намерени предстоящи новини
+                    за следващите 30 дни.
                 </div>
             `;
+
+            list.innerHTML = "";
+
+            return;
         }
 
 
-        if(past.length){
+        /*
+            НАЙ-БЛИЗКА НОВИНА
+        */
 
-            pastBox.innerHTML =
-                past
-                    .map(createNewsCard)
-                    .join("");
-
-        }else{
-
-            pastBox.innerHTML = `
-                <div class="loading">
-                    Няма намерени публикувани новини.
-                </div>
-            `;
-        }
+        next.innerHTML =
+            createNextEvent(
+                events[0]
+            );
 
 
-    }catch(error){
+        /*
+            ВСИЧКИ СЛЕДВАЩИ
+        */
 
-        console.error(error);
+        list.innerHTML =
+            events
+                .map(
+                    createNews
+                )
+                .join("");
 
 
-        upcomingBox.innerHTML = `
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        next.innerHTML = `
             <div class="error">
-                ❌ Грешка при зареждане на новините.
-                <br><br>
-                ${escapeHTML(error.message)}
+                Не успях да заредя икономическия календар.
+                Провери интернет връзката.
             </div>
         `;
 
+        list.innerHTML = "";
+    }
 
-        pastBox.innerHTML = `
-            <div class="error">
-                ❌ Историята на новините не може да бъде заредена.
+}
+
+
+/* =========================================================
+   NEXT EVENT
+========================================================= */
+
+function createNextEvent(event){
+
+    const scenario =
+        scenarios(
+            event.name
+        );
+
+
+    return `
+
+        <div class="next">
+
+            <div class="next-label">
+                СЛЕДВАЩА НОВИНА
             </div>
-        `;
-    }
+
+            <div class="next-name">
+                ${escapeHTML(
+                    event.name ||
+                    "Икономическо събитие"
+                )}
+            </div>
+
+            <div class="next-date">
+
+                ${dateTime(event.time)}
+
+                ·
+
+                ${escapeHTML(
+                    event.currency ||
+                    "USD"
+                )}
+
+            </div>
+
+            <div
+                class="countdown"
+                data-time="${escapeHTML(
+                    event.time
+                )}">
+
+                ${countdown(event.time)}
+
+            </div>
+
+
+            <div class="badges">
+
+                <div class="badge">
+                    Forecast:
+                    ${escapeHTML(
+                        event.forecast ??
+                        "—"
+                    )}
+                </div>
+
+                <div class="badge">
+                    Previous:
+                    ${escapeHTML(
+                        event.previous ??
+                        "—"
+                    )}
+                </div>
+
+                <div class="badge high">
+                    ${importance(
+                        event.importance
+                    )}
+                </div>
+
+            </div>
+
+
+            <div class="scenario up-scenario">
+
+                <strong>
+                    Първи сценарий
+                </strong>
+
+                ${scenario.first}
+
+            </div>
+
+
+            <div class="scenario down-scenario">
+
+                <strong>
+                    Втори сценарий
+                </strong>
+
+                ${scenario.second}
+
+            </div>
+
+        </div>
+    `;
 }
 
 
-// ======================================================
-// MARKET
-// ======================================================
+/* =========================================================
+   NEWS CARD
+========================================================= */
 
-async function getPrice(){
+function createNews(event){
 
-    const response =
-        await fetch(
-            API +
-            "/XAUUSD?allowStale=true"
+    const scenario =
+        scenarios(
+            event.name
         );
 
 
-    if(!response.ok){
-
-        throw new Error(
-            "XAUUSD HTTP " +
-            response.status
-        );
-    }
-
-
-    return await response.json();
-}
-
-
-async function getOHLC(interval){
-
-    const response =
-        await fetch(
-            API +
-            "/XAUUSD/ohlc" +
-            "?interval=" +
-            interval +
-            "&limit=150"
+    const imp =
+        importance(
+            event.importance
         );
 
 
-    if(!response.ok){
+    return `
 
-        throw new Error(
-            "OHLC HTTP " +
-            response.status
-        );
-    }
+        <div class="news">
 
+            <div class="news-top">
 
-    const data =
-        await response.json();
+                <div>
 
+                    <div class="news-name">
+                        ${escapeHTML(
+                            event.name ||
+                            "Икономическо събитие"
+                        )}
+                    </div>
 
-    return data.bars || [];
-}
+                    <div class="currency">
+                        ${escapeHTML(
+                            event.currency ||
+                            "USD"
+                        )}
+                    </div>
 
+                </div>
 
-// ======================================================
-// TECHNICAL BIAS
-// ======================================================
 
-function getBias(bars){
+                <div class="news-date">
 
-    if(!bars || bars.length < 25){
-        return "NEUTRAL";
-    }
+                    ${dateTime(
+                        event.time
+                    )}
 
+                    <br>
 
-    const closed =
-        bars
-            .filter(b => !b.isOpen)
-            .sort(
-                (a,b) =>
-                    new Date(a.openTime) -
-                    new Date(b.openTime)
-            );
+                    <span
+                        class="countdown"
+                        data-time="${escapeHTML(
+                            event.time
+                        )}">
 
+                        ${countdown(
+                            event.time
+                        )}
 
-    if(closed.length < 25){
-        return "NEUTRAL";
-    }
+                    </span>
 
+                </div>
 
-    const last =
-        closed[closed.length - 1];
+            </div>
 
 
-    const previous =
-        closed.slice(-21,-1);
-
-
-    const highest =
-        Math.max(
-            ...previous.map(
-                b => Number(b.high)
-            )
-        );
-
-
-    const lowest =
-        Math.min(
-            ...previous.map(
-                b => Number(b.low)
-            )
-        );
-
-
-    if(last.close > highest){
-        return "BULLISH";
-    }
-
-
-    if(last.close < lowest){
-        return "BEARISH";
-    }
-
-
-    const recent =
-        closed.slice(-10);
-
-
-    const first =
-        Number(recent[0].close);
-
-
-    const lastClose =
-        Number(
-            recent[recent.length - 1].close
-        );
-
-
-    if(lastClose > first){
-        return "BULLISH";
-    }
-
-
-    if(lastClose < first){
-        return "BEARISH";
-    }
-
-
-    return "NEUTRAL";
-}
-
-
-// ======================================================
-// FVG
-// ======================================================
-
-function getFVG(bars){
-
-    if(!bars || bars.length < 5){
-        return "NO";
-    }
-
-
-    const closed =
-        bars
-            .filter(b => !b.isOpen)
-            .sort(
-                (a,b) =>
-                    new Date(a.openTime) -
-                    new Date(b.openTime)
-            );
-
-
-    const a =
-        closed[closed.length - 3];
-
-    const c =
-        closed[closed.length - 1];
-
-
-    if(!a || !c){
-        return "NO";
-    }
-
-
-    if(c.low > a.high){
-        return "BULLISH";
-    }
-
-
-    if(c.high < a.low){
-        return "BEARISH";
-    }
-
-
-    return "NO";
-}
-
-
-// ======================================================
-// MARKET ANALYSIS
-// ======================================================
-
-async function analyzeMarket(){
-
-    try{
-
-        const [
-            price,
-            bars4h,
-            bars1h,
-            bars15
-        ] =
-        await Promise.all([
-
-            getPrice(),
-
-            getOHLC("4h"),
-
-            getOHLC("1h"),
-
-            getOHLC("15m")
-
-        ]);
-
-
-        const current =
-            Number(price.mid);
-
-
-        if(!Number.isFinite(current)){
-
-            throw new Error(
-                "Няма валидна XAUUSD цена."
-            );
-        }
-
-
-        $("price").textContent =
-            formatNumber(current);
-
-
-        if(
-            Number.isFinite(
-                Number(
-                    price.dayDiffPercent
-                )
-            )
-        ){
-
-            const change =
-                Number(
-                    price.dayDiffPercent
-                );
-
-
-            $("change").textContent =
-                (
-                    change >= 0
-                    ? "+"
+            <div
+                class="${
+                    imp === "ВИСОКА"
+                    ? "high"
+                    : imp === "СРЕДНА"
+                    ? "medium"
                     : ""
-                ) +
-                change.toFixed(2) +
-                "% днес";
+                }"
+                style="
+                    font-size:10px;
+                    font-weight:800;
+                    margin-top:9px;
+                "
+            >
+                ● ${imp} ВАЖНОСТ
+            </div>
 
 
-            $("change").className =
-                "change " +
-                (
-                    change >= 0
-                    ? "green"
-                    : "red"
-                );
-        }
+            <div class="values">
 
+                <div class="value-box">
 
-        const b4 =
-            getBias(bars4h);
+                    <div class="value-label">
+                        ACTUAL
+                    </div>
 
-        const b1 =
-            getBias(bars1h);
+                    <div class="value">
+                        —
+                    </div>
 
-        const b15 =
-            getBias(bars15);
+                </div>
 
 
-        $("tf4h").textContent =
-            b4;
+                <div class="value-box">
 
-        $("tf1h").textContent =
-            b1;
+                    <div class="value-label">
+                        FORECAST
+                    </div>
 
-        $("tf15").textContent =
-            b15;
+                    <div class="value">
 
+                        ${escapeHTML(
+                            event.forecast ??
+                            "—"
+                        )}
 
-        let signal =
-            "NO TRADE";
+                    </div>
 
+                </div>
 
-        // Един основен сигнал
 
-        if(
-            b4 === "BULLISH" &&
-            b1 === "BULLISH" &&
-            b15 === "BULLISH"
-        ){
+                <div class="value-box">
 
-            signal = "BUY";
+                    <div class="value-label">
+                        PREVIOUS
+                    </div>
 
-        }
-        else if(
-            b4 === "BEARISH" &&
-            b1 === "BEARISH" &&
-            b15 === "BEARISH"
-        ){
+                    <div class="value">
 
-            signal = "SELL";
-        }
+                        ${escapeHTML(
+                            event.previous ??
+                            "—"
+                        )}
 
+                    </div>
 
-        const signalBox =
-            $("signal");
+                </div>
 
+            </div>
 
-        signalBox.textContent =
-            signal;
 
+            <div class="scenario up-scenario">
 
-        signalBox.className =
-            "signal " +
-            (
-                signal === "BUY"
-                ? "buy"
-                : signal === "SELL"
-                ? "sell"
-                : "no-trade"
-            );
+                <strong>
+                    Ако резултатът е по-висок:
+                </strong>
 
+                ${scenario.first}
 
-        $("structure").textContent =
-            b4 === b1 && b1 === b15
-            ? "CONFIRMED"
-            : "MIXED";
+            </div>
 
 
-        $("bos").textContent =
-            b15 === "BULLISH"
-            ? "BULLISH"
-            : b15 === "BEARISH"
-            ? "BEARISH"
-            : "NO";
+            <div class="scenario down-scenario">
 
+                <strong>
+                    Ако резултатът е по-нисък:
+                </strong>
 
-        $("fvg").textContent =
-            getFVG(bars15);
+                ${scenario.second}
 
+            </div>
 
-        // Levels
-
-        let sl = null;
-        let tp = null;
-
-
-        if(signal === "BUY"){
-
-            sl =
-                current -
-                Math.max(
-                    current * 0.003,
-                    8
-                );
-
-
-            const risk =
-                current - sl;
-
-
-            tp =
-                current +
-                risk * 2;
-
-        }
-
-
-        if(signal === "SELL"){
-
-            sl =
-                current +
-                Math.max(
-                    current * 0.003,
-                    8
-                );
-
-
-            const risk =
-                sl - current;
-
-
-            tp =
-                current -
-                risk * 2;
-        }
-
-
-        $("entry").textContent =
-            formatNumber(current);
-
-
-        $("sl").textContent =
-            sl
-            ? formatNumber(sl)
-            : "—";
-
-
-        $("tp").textContent =
-            tp
-            ? formatNumber(tp)
-            : "—";
-
-
-        $("rr").textContent =
-            tp
-            ? "1 : 2"
-            : "—";
-
-
-    }catch(error){
-
-        console.error(error);
-
-
-        $("price").textContent =
-            "ERROR";
-
-
-        $("change").textContent =
-            error.message;
-
-
-        $("signal").textContent =
-            "NO TRADE";
-
-
-        $("signal").className =
-            "signal no-trade";
-    }
+        </div>
+    `;
 }
 
 
-// ======================================================
-// START
-// ======================================================
+/* =========================================================
+   COUNTDOWN UPDATE
+========================================================= */
+
+function updateCountdowns(){
+
+    document
+        .querySelectorAll(
+            "[data-time]"
+        )
+        .forEach(element => {
+
+            element.textContent =
+                countdown(
+                    element.dataset.time
+                );
+
+        });
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
 
 async function start(){
 
-    await Promise.all([
-        analyzeMarket(),
-        loadNews()
-    ]);
+    await loadPrice();
+
+    await analyze();
+
+    await loadNews();
+
 }
 
 
 start();
 
 
+/* =========================================================
+   AUTO UPDATE
+========================================================= */
+
 setInterval(
-    analyzeMarket,
+    loadPrice,
+    15000
+);
+
+
+setInterval(
+    analyze,
     60000
 );
 
 
 setInterval(
     loadNews,
-    600000
+    300000
+);
+
+
+setInterval(
+    updateCountdowns,
+    30000
 );
 
 </script>
